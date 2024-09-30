@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		640791642CAAFA7900926260 /* HomeControlClient in Frameworks */ = {isa = PBXBuildFile; productRef = 640791632CAAFA7900926260 /* HomeControlClient */; };
 		64CA8F392CA9CE460013CA4E /* HomeControlClient in Frameworks */ = {isa = PBXBuildFile; productRef = 64CA8F382CA9CE460013CA4E /* HomeControlClient */; };
 		64CA8F3C2CA9CE510013CA4E /* GoeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 64CA8F3B2CA9CE510013CA4E /* GoeKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		640791542CAAFA6100926260 /* HomeControlAdapterGoeWallbox.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = HomeControlAdapterGoeWallbox.xcodeproj; sourceTree = "<group>"; };
 		64CA8EFC2CA9CCF60013CA4E /* HomeControlAdapterGoeWallbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeControlAdapterGoeWallbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64CA8F2B2CA9CD860013CA4E /* HomeControlAdapterGoeWallbox.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = HomeControlAdapterGoeWallbox.xcodeproj; sourceTree = "<group>"; };
 		64CA8F462CA9D6820013CA4E /* HomeControlAdapterGoeWallbox.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = HomeControlAdapterGoeWallbox.xcodeproj; sourceTree = "<group>"; };
@@ -32,12 +34,20 @@
 			files = (
 				64CA8F392CA9CE460013CA4E /* HomeControlClient in Frameworks */,
 				64CA8F3C2CA9CE510013CA4E /* GoeKit in Frameworks */,
+				640791642CAAFA7900926260 /* HomeControlClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		640791562CAAFA6100926260 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		64CA8EF32CA9CCF60013CA4E = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +101,7 @@
 			packageProductDependencies = (
 				64CA8F382CA9CE460013CA4E /* HomeControlClient */,
 				64CA8F3B2CA9CE510013CA4E /* GoeKit */,
+				640791632CAAFA7900926260 /* HomeControlClient */,
 			);
 			productName = HomeControlAdapterGoeWallbox;
 			productReference = 64CA8EFC2CA9CCF60013CA4E /* HomeControlAdapterGoeWallbox.app */;
@@ -121,8 +132,8 @@
 			mainGroup = 64CA8EF32CA9CCF60013CA4E;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				64CA8F372CA9CE460013CA4E /* XCLocalSwiftPackageReference "../home-control-client" */,
 				64CA8F3A2CA9CE510013CA4E /* XCLocalSwiftPackageReference "GoeKit" */,
+				640791622CAAFA7900926260 /* XCRemoteSwiftPackageReference "home-control-client" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 64CA8EFD2CA9CCF60013CA4E /* Products */;
@@ -135,6 +146,10 @@
 				{
 					ProductGroup = 64CA8F2C2CA9CD860013CA4E /* Products */;
 					ProjectRef = 64CA8F2B2CA9CD860013CA4E /* HomeControlAdapterGoeWallbox.xcodeproj */;
+				},
+				{
+					ProductGroup = 640791562CAAFA6100926260 /* Products */;
+					ProjectRef = 640791542CAAFA6100926260 /* HomeControlAdapterGoeWallbox.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -388,17 +403,29 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		64CA8F372CA9CE460013CA4E /* XCLocalSwiftPackageReference "../home-control-client" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../home-control-client";
-		};
 		64CA8F3A2CA9CE510013CA4E /* XCLocalSwiftPackageReference "GoeKit" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = GoeKit;
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		640791622CAAFA7900926260 /* XCRemoteSwiftPackageReference "home-control-client" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/f23a/home-control-client.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		640791632CAAFA7900926260 /* HomeControlClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 640791622CAAFA7900926260 /* XCRemoteSwiftPackageReference "home-control-client" */;
+			productName = HomeControlClient;
+		};
 		64CA8F382CA9CE460013CA4E /* HomeControlClient */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = HomeControlClient;
