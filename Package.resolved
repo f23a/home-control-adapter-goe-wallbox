@@ -1,0 +1,78 @@
+{
+  "originHash" : "d0abbc750419b0003c8004ebc1380c852e5c7fed1f1628f83eeb41c34827072d",
+  "pins" : [
+    {
+      "identity" : "home-control-client",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/f23a/home-control-client.git",
+      "state" : {
+        "revision" : "2484c7395340b3647213882cf26c0434587dabff",
+        "version" : "1.6.0"
+      }
+    },
+    {
+      "identity" : "home-control-kit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/f23a/home-control-kit.git",
+      "state" : {
+        "revision" : "bc3af6a1ade465f2f8c1cedfa475dd02457b90f7",
+        "version" : "1.7.0"
+      }
+    },
+    {
+      "identity" : "home-control-logging",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/f23a/home-control-logging.git",
+      "state" : {
+        "revision" : "8f37597c3a4c17a2ea8235d4343feba6766756da",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "promisekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mxcl/PromiseKit.git",
+      "state" : {
+        "revision" : "8a98e31a47854d3180882c8068cc4d9381bf382d",
+        "version" : "6.22.1"
+      }
+    },
+    {
+      "identity" : "sungrowkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cpageler93/SungrowKit.git",
+      "state" : {
+        "revision" : "79909b5c09617d4a4a5fc830256fa873f0c4095f",
+        "version" : "1.4.0"
+      }
+    },
+    {
+      "identity" : "swift-argument-parser",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-argument-parser.git",
+      "state" : {
+        "revision" : "41982a3656a71c768319979febd796c6fd111d5c",
+        "version" : "1.5.0"
+      }
+    },
+    {
+      "identity" : "swift-log",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-log.git",
+      "state" : {
+        "revision" : "9cb486020ebf03bfa5b5df985387a14a98744537",
+        "version" : "1.6.1"
+      }
+    },
+    {
+      "identity" : "swiftymodbus",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/DimaRU/SwiftyModbus.git",
+      "state" : {
+        "revision" : "444406bf0d43bf325073e892256c963e5bf77441",
+        "version" : "2.2.1"
+      }
+    }
+  ],
+  "version" : 3
+}
