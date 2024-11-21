@@ -1,6 +1,6 @@
 //
 //  MainCommand.swift
-//  home-control-adapter-sungrow-inverter
+//  home-control-adapter-goe-wallbox
 //
 //  Created by Christoph Pageler on 31.10.24.
 //
@@ -12,7 +12,6 @@ import HomeControlClient
 import HomeControlKit
 import HomeControlLogging
 import Logging
-import SungrowKit
 
 @main
 struct MainCommand: AsyncParsableCommand {
@@ -22,15 +21,23 @@ struct MainCommand: AsyncParsableCommand {
         LoggingSystem.bootstrapHomeControl()
 
         // Load environment from .env.json
-        let dotEnv = try DotEnv.fromWorkingDirectory()
+        let dotEnv = try DotEnv<[String: String]>.fromWorkingDirectory()
 
         // Prepare home control client
         var homeControlClient = HomeControlClient.localhost
         homeControlClient.authToken = try dotEnv.require("AUTH_TOKEN")
 
-        let goeAddress = try dotEnv.require("GOE_ADDRESS")
-        guard let goeClient = GoeClient(address: goeAddress) else {
-            Self.logger.critical("Failed to initialize GoeClient with address \(goeAddress)")
+        // Prepare go-e controller client
+        let goeControllerAddress = try dotEnv.require("GOE_CONTROLLER_ADDRESS")
+        guard let goeControllerClient = GoeClient(address: goeControllerAddress) else {
+            Self.logger.critical("Failed to initialize goe controller client with address \(goeControllerAddress)")
+            return
+        }
+
+        // Prepare go-e charger client
+        let goeChargerAddress = try dotEnv.require("GOE_CHARGER_ADDRESS")
+        guard let goeChargerClient = GoeClient(address: goeChargerAddress) else {
+            Self.logger.critical("Failed to initialize goe charger client with address \(goeChargerAddress)")
             return
         }
 
@@ -45,9 +52,13 @@ struct MainCommand: AsyncParsableCommand {
         let jobs: [Job] = [
             UpdateElectricityMeterJob(
                 homeControlClient: homeControlClient,
-                goeClient: goeClient,
+                goeClient: goeControllerClient,
                 ccnCarName: ccnCarName,
                 electricityMeterID: electricityMeterIDUUID
+            ),
+            EcomaticJob(
+                homeControlClient: homeControlClient,
+                goeClient: goeChargerClient
             )
         ]
 
