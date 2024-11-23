@@ -40,8 +40,8 @@ class EcomaticJob: Job {
         let formattedDate = DateFormatter.localizedString(from: date, dateStyle: .short, timeStyle: .short)
 
         // Query for currently active force charging range that was sent to inverter
-        let activeForceChargingRanges = try await homeControlClient.forceChargingRanges.query(
-            activeAt: date,
+        let activeForceChargingRanges = try await homeControlClient.forceChargingRanges.active(
+            at: date,
             additionalFilter: [
                 .state(.sent),
             ],
