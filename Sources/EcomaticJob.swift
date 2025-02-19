@@ -66,8 +66,10 @@ class EcomaticJob: Job {
         let formattedStartingRange = startingRange.formatted()
         let endsRange = activeForceChargingRange.value.endsAt.range(startedBefore: 15.minutes)
         let formattedEndsRange = endsRange.formatted()
+        let isVehicleChargingAllowed = activeForceChargingRange.value.isVehicleChargingAllowed
 
-        if startingRange.contains(date) {
+        // When date is in starting range and vehicle charging is allowed, change to basic if needed
+        if startingRange.contains(date) && isVehicleChargingAllowed {
             logger.info("In starting range \(formattedStartingRange), set to basic if needed")
             try await setLogicModeIfNeeded(logicMode: .basic)
         } else if endsRange.contains(date) {
